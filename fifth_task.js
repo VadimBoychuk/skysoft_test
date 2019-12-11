@@ -12,7 +12,7 @@ const isValid = string => {
     if (closingBrackets.indexOf(character) > -1) {
       matchingOpeningBracket =
         openingBrackets[closingBrackets.indexOf(character)];
-      if (stack.length == 0 || stack.pop() != matchingOpeningBracket) {
+      if (stack.length === 0 || stack.pop() !== matchingOpeningBracket) {
         return false;
       }
     } else {
@@ -20,7 +20,7 @@ const isValid = string => {
     }
   }
 
-  return stack.length == 0;
+  return stack.length === 0;
 };
 
 console.log(isValid("([)]"));
